@@ -1,0 +1,52 @@
+body {
+  background-image: url('https://i.pinimg.com/1200x/40/aa/56/40aa56d9b32e315806cb2ffb4598381c.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  /* fallback/body font */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-brand,
+.btn {
+  font-family: 'Simpsonfont', sans-serif;
+  letter-spacing: 1px;
+}
+
+.simpson-font {
+  font-family: 'Simpsonfont', sans-serif;
+}
+
+.hover-zoom {
+  transition: transform 0.1s ease;
+}
+
+.hover-zoom:hover {
+  transform: scale(1.05);
+}
+
+.xsmall {
+  font-size: 1rem !important;
+}
+
+
+::-webkit-scrollbar {
+  height: 12px; 
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #FFD90F; 
+  border-radius: 10px;
+  border: 2px solid #f1f1f1; 
+}

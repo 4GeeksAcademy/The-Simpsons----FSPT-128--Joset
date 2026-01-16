@@ -1,0 +1,16 @@
+- Trabajar basados en encesidades, de que va la pagina? que quiere mostrar? que necesitas tener?
+- Definir el Home
+- Antes de encargarnos de las cartas de cada personaje, primero necesitamos los personajes. 
+Con lo cual debemos alojarnos en el store y traerlos desde la API.
+- Cada vez que mapeamos debemos colocar una "key"
+- Dara error, entonces en data debemos crear el objeto a mapear, en este caso: characters:[], aunque por ahora este vacio.
+- Desde la API services debemos entonces llamar a los characters con una funcion asincrona y usando fetch
+- Cuando se crea la funcion en la API se debe ejecutar en el home con un useEffect, para que cuando se monte el componente quiero que se ejecute. Quiere decir que cada vez que se cargue Home debe buscar automaticamente , en este caso, los personajes, por ejemplo. 
+- Ahora, usamos dispatch en el store para ejecutar una accion. Para poder modificar el store, necesitamos ejecutar una accion. 
+- Como se usa el dispatch: en el store, necesitamos la logica para esta accion. Se crea un caso(case).
+El case siempre retorna el nuevo valor que va a tener el store. 
+Se hace en el store reducer porque aqui se ejecutra la logica del tipo accion, en este caso de setear personajes y buscamos setear a characters:[]
+Payload: cuando se produce el dispatch se produce esta accion: dispatch({type:"set_characters", payload: characters}).
+- Ahora toca implementar el dispatch en APISImpsons
+- Creamos la carta. 
+- a los botones hay que redireccionar a la otra pagina donde va a estar toda la info del personaje 
