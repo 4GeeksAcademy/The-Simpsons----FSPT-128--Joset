@@ -1,14 +1,17 @@
 import { useEffect } from "react";
 import useGlobalReducer from "../hooks/useGlobalReducer";
 import { getCharacters, getLocations } from "../Services/APISimpsons.js"; 
-import { CharactersCard } from "../components/CharactersCard.jsx"; // CORREGIDO (Singular)
-import { LocationCard } from "../components/LocationCard.jsx";   // CORREGIDO (Singular)
+import { CharactersCard } from "../components/CharactersCard.jsx"; 
+import { LocationCard } from "../components/LocationCard.jsx";  
+
 export const Home = () => {
     const { store, dispatch } = useGlobalReducer();
+    
     useEffect(() => {
         getCharacters(dispatch);
         getLocations(dispatch);
     }, []);
+
     const handleToggleFavorite = (item, type) => {
         const isLoc = type === 'loc';
         const list = isLoc ? store.favoriteLocations : store.favoriteCharacters;

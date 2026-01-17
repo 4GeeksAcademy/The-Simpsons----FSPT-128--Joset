@@ -12,7 +12,7 @@ export const Navbar = () => {
             <img 
                 src="https://upload.wikimedia.org/wikipedia/commons/9/98/The_Simpsons_yellow_logo.svg" 
                 alt="The Simpsons" 
-                height="50" 
+                height="80" 
                 className="d-inline-block align-text-top"
             />
         </Link>
@@ -30,17 +30,16 @@ export const Navbar = () => {
             aria-expanded="false"
             style={{ backgroundColor: "#F687B3", color: "white", border: "2px solid #D53F8C" }}
           >
-            {/* Sumamos directamente aquí */}
+            
             🍩 Mis Donuts ({store.favoriteCharacters.length + store.favoriteLocations.length})
           </button>
           <ul className="dropdown-menu dropdown-menu-end" style={{ maxHeight: "300px", overflowY: "auto" }}>
             
-            {/* Si la suma es 0, mostramos "Sin favoritos" */}
             {(store.favoriteCharacters.length + store.favoriteLocations.length) === 0 ? (
               <li><span className="dropdown-item text-center text-muted">Sin favoritos</span></li>
             ) : (
               <>
-                {/* PERSONAJES */}
+               
                 {store.favoriteCharacters.length > 0 && <li className="dropdown-header text-primary">Personajes</li>}
                 {store.favoriteCharacters.map((item) => (
                     <li key={item.id}>
@@ -49,7 +48,7 @@ export const Navbar = () => {
                             <button 
                                 className="btn btn-sm btn-outline-danger"
                                 onClick={(e) => {
-                                    e.stopPropagation(); // Evita que se cierre el menú al borrar
+                                    e.stopPropagation(); 
                                     dispatch({ type: 'remove_fav_character', payload: item });
                                 }}
                             >
@@ -58,11 +57,11 @@ export const Navbar = () => {
                         </div>
                     </li>
                 ))}
-                {/* LUGARES */}
+                
                 {store.favoriteLocations.length > 0 && <li><hr className="dropdown-divider"/></li>}
                 {store.favoriteLocations.length > 0 && <li className="dropdown-header text-success">Lugares</li>}
                 {store.favoriteLocations.map((item) => (
-                    <li key={'loc-' + item.id}> {/* 'loc-' para que no se repita la key con los personajes */}
+                    <li key={'loc-' + item.id}> 
                         <div className="dropdown-item d-flex justify-content-between align-items-center gap-2">
                             <span className="text-truncate" style={{ maxWidth: "150px" }}>{item.name}</span>
                             <button 
